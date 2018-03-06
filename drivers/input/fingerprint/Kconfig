@@ -1,0 +1,41 @@
+#
+#Fingerprint
+#
+menu "Finger support"
+	depends on !UML
+
+config MTK_FINGERPRINT
+	tristate "Mediatek Fingerprint"
+	default n
+	---help---
+	Fingerprint mtk driver enable/disable in the kernel.
+	Say Y here if you want to use mediatek fingerprint driver,
+	fingerprint driver will support fingerprint function in REE,
+	it supports FPC's 102x/104x device.
+
+if MTK_FINGERPRINT
+config FINGERPRINT_MICROARRAY_FP
+	tristate "microarray Fingerprint"
+	default n
+config FINGERPRINT_GSL6161_FP
+	tristate "gsl6161 Fingerprint"
+	default n
+config FINGERPRINT_GOODIX_FP
+	tristate "goodix Fingerprint"
+	default n
+	---help---
+	Goodix Fingerprint chip GF516/GF318GF316M/GF616M/GF318M  no tee driver
+config FINGERPRINT_FPC_FP
+    tristate "fpc Fingerprint"
+    default n
+config FINGERPRINT_GX368_FP
+    tristate "goodix Fingerprint"
+    default n
+config FINGERPRINT_GX368_OTP_FP
+    tristate "goodix gx368 otp Fingerprint"
+    default n
+config FINGERPRINT_SW9551
+	tristate "xinwei Fingerprint"
+	default n
+endif
+endmenu

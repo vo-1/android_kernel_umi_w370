@@ -1,0 +1,4 @@
+
+config FINGERPRINT_SUNWAVE_9551
+        bool "FINGERPRINT_SUNWAVE_9551"
+        default n
